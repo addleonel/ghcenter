@@ -216,14 +216,16 @@ const Main = () => {
 	return (
 		<React.Fragment>
 			<section className="section-m section-1">
+				<video id="mp4_src" className="portal-video" src="https://accezby-media-develop.nyc3.digitaloceanspaces.com/video/video.mp4" autoPlay muted loop></video>
+
 				<Container>
 					<div className="section-1-content">
 						<div className="portal-phrase">
 							<h1 className="portal-title">
-							Compra Repuestos Multimarcas en General
+							Te ofrecemos barras para cocinas, bar, reposteros, todo con base de granto
 							</h1>
 							<p className="portal-subtitle">
-								Servicio técnico especializado en motocicletas y motores menores
+							Piedra italiana 100% natural.
 								
 							</p>
 							<button 
@@ -234,76 +236,15 @@ const Main = () => {
                             </button>
 						</div>
 						<div className="portal-media">
-							<img className="portal-image pimage-1" src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/271830144_3039380062980739_2031031125507542809_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=tE9hmojjzjkAX-xvlEl&tn=3RXRreKQDGxF6YYQ&_nc_ht=scontent-lim1-1.xx&oh=00_AT96MpbLcXMMsjJ-8LLTq7Kj5D_yIfZh-0etspTbI6i74A&oe=62B657E2" alt="" />
-							<img className="portal-image pimage-2"src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/272263958_3042277879357624_3408080719838212641_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=x5P6I9m8fQwAX_TAq0e&tn=3RXRreKQDGxF6YYQ&_nc_ht=scontent-lim1-1.xx&oh=00_AT9KjUXMfQWKGAqLUM0HPxH7rzcMuGU3Sw7_og5xLdLx1A&oe=62B64B83" alt="" />
+							<img className="portal-image pimage-1" src="https://images.pexels.com/photos/10827305/pexels-photo-10827305.jpeg" alt="" />
+							<img className="portal-image pimage-2"src="https://images.pexels.com/photos/3926542/pexels-photo-3926542.jpeg" alt="" />
 							
-							<video id="mp4_src" className="portal-video" src="https://accezby-media-develop.nyc3.digitaloceanspaces.com/video/video1.mp4" autoPlay muted loop></video>
 						</div>
 					</div>
 				</Container>
 			</section>
 			<section className="section-m section-2">
 				<Container fluid="xxl">
-					<div className="c-container">
-						<Slider {...sliderState}>
-							{/* <div>
-								<HashLink to="/products/#llantas" className="circle-image">
-									<img style={{borderRadius: "50%"}} src="https://images.pexels.com/photos/5806190/pexels-photo-5806190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"  alt="" />
-									<p>Llantas</p>
-								</HashLink>
-							</div> */}
-							<div>
-								<HashLink to="/products/#sistema-arrastre" className="circle-image">
-									<img style={{borderRadius: "50%"}} src="https://images.pexels.com/photos/1119796/pexels-photo-1119796.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-									<p>Sistema de arrastre</p>
-								</HashLink>
-							</div>
-							<div>
-								<HashLink to="/products/#sistema-electrico" className="circle-image">
-									<img style={{borderRadius: "50%"}} src="https://images.pexels.com/photos/2948297/pexels-photo-2948297.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-									<p>Sistema electrico</p>
-								</HashLink>
-							</div>
-							{/* <div>
-								<HashLink to="/products/#sistema-motor" className="circle-image">
-									<img style={{borderRadius: "50%"}} src="https://images.pexels.com/photos/8550641/pexels-photo-8550641.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-									<p>Sistema de motor</p>
-								</HashLink>
-							</div> */}
-							{/* <div>
-								<HashLink to="/products/#luces" className="circle-image">
-									<img style={{borderRadius: "50%"}} src="https://images.pexels.com/photos/1253640/pexels-photo-1253640.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-									<p>Luces</p>
-								</HashLink>
-							</div> */}
-							<div>
-								<HashLink to="/products/#accesorios-motor" className="circle-image">
-									<img style={{borderRadius: "50%"}} src="https://images.pexels.com/photos/1407130/pexels-photo-1407130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-									<p>Accesorios para motor</p>
-								</HashLink>
-							</div>
-							<div>
-								<HashLink to="/products/#accesorios-piloto" className="circle-image">
-									<img style={{borderRadius: "50%"}} src="https://images.pexels.com/photos/9835238/pexels-photo-9835238.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-									<p>Accesorios para piloto</p>
-								</HashLink>
-							</div>
-							 <div>
-								<HashLink to="/products/#sistemas-frenos" className="circle-image">
-									<img style={{borderRadius: "50%"}} src="https://images.pexels.com/photos/2377903/pexels-photo-2377903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-									<p>Sistemas de frenos</p>
-								</HashLink>
-							</div> 
-							
-						</Slider>
-					</div>
-					{/* <h2 className="category">Llantas</h2>
-					<div className="c-container">
-						<Slider {...sliderState}>
-							{listLlantas}
-						</Slider>
-						<HashLink style={{textDecoration: "none"}} to="/products/#llantas">Ver más</HashLink>
-					</div> */}
 					<h2 className="category">Sistema de arrastre</h2>
 					<div className="c-container">
 						<Slider {...sliderState}>
@@ -311,48 +252,6 @@ const Main = () => {
 						</Slider>
 						<HashLink style={{textDecoration: "none"}} to="/products/#sistema-arrastre">Ver más</HashLink>
 					</div>
-					<h2 className="category">Sistema Electrico</h2>
-					<div className="c-container">
-						<Slider {...sliderState}>
-							{listSistemaElectrico}
-						</Slider>
-						<HashLink style={{textDecoration: "none"}}to="/products/#sistema-electrico">Ver más</HashLink>
-					</div>
-					{/* <h2 className="category">Sistema de Motor</h2>
-					<div className="c-container">
-						<Slider {...sliderState}>
-							{listSistemaMotor}
-						</Slider>
-						<HashLink style={{textDecoration: "none"}}to="/products/#sistema-motor">Ver más</HashLink>
-					</div> */}
-					{/* <h2 className="category">Luces</h2>
-					<div className="c-container">
-						<Slider {...sliderState}>
-							{listLuces}
-						</Slider>
-						<HashLink style={{textDecoration: "none"}}to="/products/#luces">Ver más</HashLink>
-					</div> */}
-					<h2 className="category">Accesorios para Motor</h2>
-					<div className="c-container">
-						<Slider {...sliderState}>
-							{listAccesorioMotor}
-						</Slider>
-						<HashLink style={{textDecoration: "none"}}to="/products/#accesorios-motor">Ver más</HashLink>
-					</div>
-					<h2 className="category">Accesorios para Piloto</h2>
-					<div className="c-container">
-						<Slider {...sliderState}>
-							{listAccesorioPiloto}
-						</Slider>
-						<HashLink style={{textDecoration: "none"}}to="/products/#accesorios-piloto">Ver más</HashLink>
-					</div>
-					{/* <h2 className="category">Sistemas de frenos</h2>
-					<div className="c-container">
-						<Slider {...sliderState}>
-							{listSistemaFrenos}
-						</Slider>
-						<HashLink style={{textDecoration: "none"}}to="/products/#sistemas-frenos">Ver más</HashLink>
-					</div> */}
 				</Container>
 			</section>
 		</React.Fragment>

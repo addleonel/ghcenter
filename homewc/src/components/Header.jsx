@@ -90,13 +90,13 @@ const Header = () => {
       <nav id="navbarroot-id" className="navbarroot">
         <Container fluid="xxl" className="nav-bar"> 
             <a className="nav-bar__logo" href="/">
-              <img className="nav-bar__logo-image" src="https://raw.githubusercontent.com/addleonel/ghcenter/main/racingwc/src/assets/static/logo/logo.png"alt=""/>
+              <img className="nav-bar__logo-image" src="https://raw.githubusercontent.com/addleonel/ghcenter/main/homewc/src/assets/static/logo/logo.png"alt=""/>
                  <span className="nav-bar__logo-text">Granitos Home Center</span>
             </a>
             <button className="nav-bar__button-item nav-bar__buttons-item--subscribe nav-bar__buttons-item--subscribe-responsive" onClick={() => window.location.href = contactURL}>Contactar</button>
             
             <div className="nav-bar__display" id="nav-bar__display-id" onClick={ displayResponsive }>
-                <img className="nav-bar__display-icon" src="https://raw.githubusercontent.com/addleonel/ghcenter/54f5659d530c66111fa5cdc205e07501bb5dee14/racingwc/src/assets/static/icons/bars.svg" alt=""/> 
+                <img className="nav-bar__display-icon" src="https://raw.githubusercontent.com/addleonel/ghcenter/59ef2cad24ca811449366d46ee576a8100de17a8/homewc/src/assets/static/icons/bars.svg" alt=""/> 
             </div>
             
             <div className="nav-bar__buttons">
@@ -120,6 +120,11 @@ const Header = () => {
                     <h3 className="items-title">Contacto</h3>
                     <p className="items-text"></p>
                   </Link>
+                  <a className="nav-bar__buttons-item items-container" href="https://app.powerbi.com/reportEmbed?reportId=05946fcc-c3c5-4353-b30f-9bafab74a12b&autoAuth=true&ctid=edfcf439-4a57-41f4-b919-d8f8adba4657&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXBhYXMtMS1zY3VzLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9" target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon className="items-icon" icon="fa-solid fa-chart-line" />
+                    <h3 className="items-title">Nuestras ventas</h3>
+                    <p className="items-text"></p>
+                  </a>
                 </Fade> 
               </Container>
           </div>
