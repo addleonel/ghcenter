@@ -1,0 +1,80 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacta con Nosotros</title>
+    <link rel="icon" href="{% static 'img/logo_2.png' %}" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</head>
+<body>
+    <div class="logo-container">
+        <a href="{% url 'contact:welcome' %}">
+          <img class="logo-image" src="{% static 'img/logo.png' %}" alt="">
+        </a>
+    </div>
+    {% if message %}
+    
+    <div class="message-container">
+      <p class="message-welcome">
+        {{message}}
+      </p>
+    </div>
+    {% endif %}
+    <div class="container">
+    <div class="content">
+      <div class="left-side">
+        <div class="address details">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="topic">Dirección</div>
+          <div class="text-one">
+            jr .tarapaca 918 Huánuco, Peru</div>
+          <!-- <div class="text-two">Birendranagar 06</div> -->
+        </div>
+        <div class="phone details">
+          <i class="fas fa-phone-alt"></i>
+          <div class="topic">Teléfono</div>
+          <div class="text-one">998 811 504</div>
+          <!-- <div class="text-two">+0096 3434 5678</div> -->
+        </div>
+        <!-- <div class="email details">
+          <i class="fas fa-envelope"></i>
+          <div class="topic">Email</div>
+          <div class="text-one">codinglab@gmail.com</div>
+          <div class="text-two">info.codinglab@gmail.com</div>
+        </div> -->
+      </div>
+      <div class="right-side">
+        <div class="topic-text">Mandanos un mensaje</div>
+    
+      <form action="" method="POST">
+        {% csrf_token %}
+        <div class="input-box">
+          <input type="text" placeholder="Introduzca su nombre" name="name" required>
+        </div>
+        <div class="input-box">
+            <input type="text" placeholder="Introduzca su apellido" name="surname" required>
+        </div>
+        <div class="input-box">
+          <input type="email" placeholder="Introduzca su correo electrónico" name="email" required>
+        </div>
+        <div class="input-box">
+          <input type="phone" placeholder="Introduzca su número de teléfono" name="phone" required>
+      </div>
+        <div class="input-box message-box">
+          <textarea placeholder="Introduzca un mesage" name="message" required></textarea>
+        </div>
+        <div class="button">
+          <input type="submit" value="Enviar" >
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+
+</body>
+</html>
