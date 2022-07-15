@@ -7,14 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacta con Nosotros</title>
-    <link rel="icon" href="{% static 'img/logo_2.png' %}" />
+    <link rel="icon" href="https://raw.githubusercontent.com/addleonel/ghcenter/main/homewc/public/favicon.ico" />
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 </head>
 <body>
     <div class="logo-container">
-        <a href="{% url 'contact:welcome' %}">
-          <img class="logo-image" src="{% static 'img/logo.png' %}" alt="">
+        <a class="logo-link" href="{% url 'contact:welcome' %}">
+          <img class="logo-image" src="https://raw.githubusercontent.com/addleonel/ghcenter/main/homewc/src/assets/static/logo/logo.png" alt="">
+          <span class="logo-title">Granitos Home Center</span>
         </a>
     </div>
     {% if message %}
@@ -32,13 +33,13 @@
           <i class="fas fa-map-marker-alt"></i>
           <div class="topic">Dirección</div>
           <div class="text-one">
-            jr .tarapaca 918 Huánuco, Peru</div>
+            Huallayco - Huánuco #1251 Huánuco, Peru</div>
           <!-- <div class="text-two">Birendranagar 06</div> -->
         </div>
         <div class="phone details">
           <i class="fas fa-phone-alt"></i>
           <div class="topic">Teléfono</div>
-          <div class="text-one">998 811 504</div>
+          <div class="text-one">(062) 516561</div>
           <!-- <div class="text-two">+0096 3434 5678</div> -->
         </div>
         <!-- <div class="email details">

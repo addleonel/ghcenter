@@ -9,15 +9,8 @@ import buttonURL from "../utils.js";
 
 // products
 import ProductItem from "./ProductItem";
-import { llantas, 
-    sistemaArrastre,
-    sistemaElectrico,
-    sistemaMotor,
-    luces,
-    accesoriosMotor, 
-    accesoriosPiloto,
-    sistemaFrenos
- } from "../productsList.js";
+import { results
+ } from "../resultList.js";
 
 const Main = () => {
 	const contactURL = buttonURL;
@@ -77,142 +70,21 @@ const Main = () => {
 		});
 	}, []);
 
-	const listLlantas =  llantas.slice(0, 7).map((link) =>{
+	const resultList =  results.slice(0, 9).map((link) =>{
         return( 
             <React.Fragment>
 				<div>
 					<ProductItem 
 						key={link.id}
-						name={link.name}
 						image={link.image}
-						price={link.price}
-						mark={link.mark}
-						in_=""
+						in_="in-products"
 					/>
 				</div>
             </React.Fragment>
         )
     });
 
-    const listSistemaArrastre =  sistemaArrastre.slice(0, 7).map((link) =>{
-        return( 
-            <React.Fragment>
-				<div>
-					<ProductItem 
-						key={link.id}
-						name={link.name}
-						image={link.image}
-						price={link.price}
-						mark={link.mark}
-						in_=""
-					/>
-				</div>
-            </React.Fragment>
-        )
-    });
-
-    const listSistemaElectrico =  sistemaElectrico.slice(0, 7).map((link) =>{
-        return( 
-            <React.Fragment>
-                <div>
-					<ProductItem 
-						key={link.id}
-						name={link.name}
-						image={link.image}
-						price={link.price}
-						mark={link.mark}
-						in_=""
-					/>
-				</div>
-            </React.Fragment>
-        )
-    });
-
-    const listSistemaMotor =  sistemaMotor.slice(0, 7).map((link) =>{
-        return( 
-            <React.Fragment>
-                <div>
-					<ProductItem 
-						key={link.id}
-						name={link.name}
-						image={link.image}
-						price={link.price}
-						mark={link.mark}
-						in_=""
-					/>
-				</div>
-            </React.Fragment>
-        )
-    });
-
-
-    const listLuces =  luces.slice(0, 7).map((link) =>{
-        return( 
-            <React.Fragment>
-                <div>
-					<ProductItem 
-						key={link.id}
-						name={link.name}
-						image={link.image}
-						price={link.price}
-						mark={link.mark}
-						in_=""
-					/>
-				</div>
-            </React.Fragment>
-        )
-    });
-
-    const listAccesorioMotor =  accesoriosMotor.slice(0, 7).map((link) =>{
-        return( 
-            <React.Fragment>
-                <div>
-					<ProductItem 
-						key={link.id}
-						name={link.name}
-						image={link.image}
-						price={link.price}
-						mark={link.mark}
-						in_=""
-					/>
-				</div>
-            </React.Fragment>
-        )
-    });
-
-    const listAccesorioPiloto =  accesoriosPiloto.slice(0, 7).map((link) =>{
-        return( 
-            <React.Fragment>
-                <div>
-					<ProductItem 
-						key={link.id}
-						name={link.name}
-						image={link.image}
-						price={link.price}
-						mark={link.mark}
-						in_=""
-					/>
-				</div>
-            </React.Fragment>
-        )
-    });
-
-    const listSistemaFrenos =  sistemaFrenos.slice(0, 7).map((link) =>{
-        return( 
-            <React.Fragment>
-                <div>
-					<ProductItem 
-						key={link.id}
-						name={link.name}
-						image={link.image}
-						price={link.price}
-						mark={link.mark}
-						in_=""
-					/>
-				</div>
-            </React.Fragment>
-        )
-    });
+    
 	return (
 		<React.Fragment>
 			<section className="section-m section-1">
@@ -245,12 +117,13 @@ const Main = () => {
 			</section>
 			<section className="section-m section-2">
 				<Container fluid="xxl">
-					<h2 className="category">Sistema de arrastre</h2>
+					<h2 className="category">Nuestros resultados</h2>
 					<div className="c-container">
-						<Slider {...sliderState}>
-							{listSistemaArrastre}
-						</Slider>
-						<HashLink style={{textDecoration: "none"}} to="/products/#sistema-arrastre">Ver más</HashLink>
+						<div className="products">   
+							{resultList}
+						</div>
+						
+						<HashLink style={{textDecoration: "none"}} to="/products/">Ver más</HashLink>
 					</div>
 				</Container>
 			</section>

@@ -1,11 +1,3 @@
-.section-p {
-    width: 100%;
-    padding:100px 0 ;
-    background-image: url("https://images.pexels.com/photos/19101/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .section-m {
     width: 100%;
     padding:100px 0 ;
@@ -17,6 +9,14 @@
     height: 100vh;
 }
 
+.section-p {
+    width: 100%;
+    padding:100px 0 ;
+    background-image: url("https://images.pexels.com/photos/7027786/pexels-photo-7027786.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+}
 
 .section-1-content {
     width: 100%;
@@ -185,7 +185,7 @@
 }
 
 .c-item {
-    width: 220px;
+    width: 360px;
     height: auto;
     padding: 10px 20px;
     margin: 0 10px 30px 10px;
@@ -221,10 +221,15 @@
 
 .content-modal-elements {
     display: flex;
-    justify-content: space-around;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-image {
+    width: 100%;
+    height: 400px;
     object-fit: contain;
 }
 
@@ -234,16 +239,15 @@
 
 .c-image {
     width: 100%;
-    height: 220px;
-    display: block;
+    height: auto;
     border-radius: 10px 10px 0 0;
     // background-color: green;
 }
 
 .c-image img {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    height: 320px;
+    object-fit: cover;
 }
  .c-title {
     display: block;
@@ -263,10 +267,11 @@
  }
 
  .c-book {
-    background-color: #ef3a3a !important;
-    border-color: #ef3a3a !important;
+    background: none !important;
+    border: none!important;
     outline: none !important;
     box-shadow: none !important;
+    width: 100%;
  }
 
  .c-book:focus {
@@ -318,7 +323,7 @@
 // products
 .products {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
     grid-row-gap: 40px;
 }
 

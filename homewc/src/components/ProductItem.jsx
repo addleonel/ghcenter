@@ -30,36 +30,36 @@ const ProductItem= (props) => {
     return (
         <React.Fragment>
             <div className={class_}>
-                <div className="c-image">
-                    <img src={props.image} width="300px" alt="" />
-                </div>
-                <p className="c-title">
+               
+                {/* <p className="c-title">
                    {props.name} - {props.mark}
-                </p>
-                <p className="c-price">
+                </p> */}
+                {/* <p className="c-price">
                     S/ {props.price}
-                </p>
+                </p> */}
                 <Button variant="primary" className="c-book" onClick={handleShow}>
-                    Reservar
+                    <div className="c-image">
+                        <img src={props.image} alt="" />
+                    </div>
                 </Button>
             
                 <Modal show={show} onHide={handleClose} size="lg" centered  style={{ borderRadius: "10px !important",}}>
                     <Modal.Header closeButton>
-                    <Modal.Title style={{fontWeight: "bold"}}>Reservar Producto</Modal.Title>
+                    {/* <Modal.Title style={{fontWeight: "bold"}}>Reservar Producto</Modal.Title> */}
                     </Modal.Header>
                     <Modal.Body >
                        
                         <div className="content-modal-elements">
-                            <img className="modal-image" src={props.image} width="250px" alt="" />
+                            <img className="modal-image" src={props.image} alt="" />
                             <div style={{margin: "10px 20px",}}>
-                                <p>
+                                {/* <p>
                                 Para reservar este producto, usted debe contactarse con nosotros
                                 especificando el producto y su marca en el mensaje
-                                </p>
-                                <p className="c-title" style={{fontWeight:"bold"}}>
-                                {props.name} - {props.mark}
-                                </p>
-                                <p className="c-price" style={{textAlign:"center", backgroundColor:"#ffd7bf", padding:"10px 20px", borderRadius: "10px",}}>
+                                </p> */}
+                                {/* <p className="c-title" style={{fontWeight:"bold"}}> */}
+                                {/* {props.name} - {props.mark} */}
+                                {/* </p> */}
+                                {/* <p className="c-price" style={{textAlign:"center", backgroundColor:"#ffd7bf", padding:"10px 20px", borderRadius: "10px",}}>
                                     S/ {numberWithCommas(props.price)}
                                 </p>
                                 <div className="c-price total-counter" style={{textAlign:"center"}}>
@@ -71,9 +71,9 @@ const ProductItem= (props) => {
                                         <p className="counter-field">{multiply}</p>
                                         <button className="counter-more" onClick={increaseMultiply}>+</button>
                                     </div>
-                                </div> 
+                                </div>  */}
                                 <Button className="modal-contact-button" variant="primary" onClick={() => window.location.href = contactURL}>
-                                    Contactar y hacer reserva
+                                    Contactar
                                 </Button>
                             </div>
                         </div>
