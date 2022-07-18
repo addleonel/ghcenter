@@ -3,7 +3,7 @@ import "../assets/styles/Footer.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import buttonURL from "../utils";
+import {buttonURL} from "../utils";
 
 const Footer = () => {
   const contactURL = buttonURL;

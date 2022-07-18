@@ -1,11 +1,11 @@
-import React, {useEffect} from "react";
+import React, {Fragment, useEffect, useState} from "react";
 
 import { Fade } from "react-awesome-reveal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import '../assets/styles/Header.scss';
-import buttonURL from "../utils";
+import {buttonURL} from "../utils";
 
 const Header = () => {
   const contactURL = buttonURL;
@@ -85,14 +85,22 @@ const Header = () => {
       menu.style.display = "block";
   }
 
+  const [isAuth, setIsAuth] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem('token') !== null) {
+      setIsAuth(true);
+    }
+  }, []);
+
   return (
     <React.Fragment>
       <nav id="navbarroot-id" className="navbarroot">
         <Container fluid="xxl" className="nav-bar"> 
-            <a className="nav-bar__logo" href="/">
+            <Link className="nav-bar__logo" to="/">
               <img className="nav-bar__logo-image" src="https://raw.githubusercontent.com/addleonel/ghcenter/main/homewc/src/assets/static/logo/logo.png"alt=""/>
                  <span className="nav-bar__logo-text">Granitos Home Center</span>
-            </a>
+            </Link>
             <button className="nav-bar__button-item nav-bar__buttons-item--subscribe nav-bar__buttons-item--subscribe-responsive" onClick={() => window.location.href = contactURL}>Contactar</button>
             
             <div className="nav-bar__display" id="nav-bar__display-id" onClick={ displayResponsive }>
@@ -102,7 +110,18 @@ const Header = () => {
             <div className="nav-bar__buttons">
                 <button id="nav-bar__buttons-item--company-id" className="nav-bar__buttons-item nav-bar__buttons-item--company">Empresa <FontAwesomeIcon icon="fa-solid fa-caret-down" /></button>
                 <Link className="nav-bar__buttons-item nav-bar__buttons-item--business"  to="/products/">Productos</Link>
-                <button className="nav-bar__button-item nav-bar__buttons-item--subscribe" onClick={() => window.location.href = contactURL}>Contactar</button>                                                                                                         
+                {/* <button className="nav-bar__button-item nav-bar__buttons-item--subscribe" onClick={() => window.location.href = contactURL}>Contactar</button>                                                                                                          */}
+                {isAuth === true ? (
+                  <Fragment>
+                    <FontAwesomeIcon icon="fa-solid fa-user" />
+                    <Link className="nav-bar__buttons-item nav-bar__buttons-item--business" to='/logout/'>Cerrar Sesión</Link>
+                   </Fragment>
+                  ) : (
+                    <Fragment>
+                      <Link className="nav-bar__buttons-item nav-bar__buttons-item--business" to='/login/'>Iniciar sesión</Link>
+                      <Link className="nav-bar__buttons-item nav-bar__buttons-item--business" to='/signup/'>Registrase</Link>
+                    </Fragment>
+                )}
             </div>
         </Container>         
       </nav>

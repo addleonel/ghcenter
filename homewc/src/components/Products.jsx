@@ -1,23 +1,35 @@
-import * as React from "react";
-import { Container,
-    Tab, 
-    Row, 
-    Nav, 
-    Col,
-
-} from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import { Container} from "react-bootstrap";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "../assets/styles/Main.scss";
 import ProductItem from "./ProductItem";
 import { HashLink } from "react-router-hash-link";
-import {results
-} from "../resultList.js";
+// import {results
+// } from "../resultList.js";
+import axios from "axios";
+import { backendURL } from "../utils";
+
 const Products = () => {
-    const resultList =  results.map((link) =>{
+    const [productList, setProductList] = useState([]);
+    useEffect(()=>{
+		axios.get(backendURL+ 'api/products/')
+			.then((res) => {
+				console.log(res.data);
+				setProductList(res.data);
+			})
+			.catch(err => {
+				console.erro(err);
+			})
+		
+	}, [])
+
+    const resultList =  productList.map((link) =>{
         return( 
             <React.Fragment>
                 <ProductItem 
+                    id={link.id}
                     key={link.id}
+                    likes={link.likes.length}
                     image={link.image}
                     in_="in-products"
                 />

@@ -1,10 +1,11 @@
 import React , { useState, useEffect } from "react";
 import Slider from "react-slick";
+import axios from "axios";
 import { Container } from "react-bootstrap";
 import "../assets/styles/Main.scss";
 // import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import buttonURL from "../utils.js";
+import {backendURL, buttonURL} from "../utils.js";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // products
@@ -15,6 +16,7 @@ import { results
 const Main = () => {
 	const contactURL = buttonURL;
 	const [showp, setShowp] = useState(5);
+	const [productList, setProductList] = useState([]);
 	const sliderState = {
 		dots: false,
 		infinite: true,
@@ -70,19 +72,33 @@ const Main = () => {
 		});
 	}, []);
 
-	const resultList =  results.slice(0, 9).map((link) =>{
-        return( 
-            <React.Fragment>
+	useEffect(()=>{
+		axios.get(backendURL+'api/products/')
+			.then((res) => {
+				console.log(res.data);
+				setProductList(res.data);
+			})
+			.catch(err => {
+				console.erro(err);
+			})
+		
+	}, [])
+
+	const resultList = productList.slice(0, 9).map((link) =>{
+		return( 
+			<React.Fragment>
 				<div>
 					<ProductItem 
+						id={link.id}
+						likes={link.likes.length}
 						key={link.id}
 						image={link.image}
 						in_="in-products"
 					/>
 				</div>
-            </React.Fragment>
-        )
-    });
+			</React.Fragment>
+		)
+	});
 
     
 	return (

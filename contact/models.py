@@ -4,6 +4,7 @@ from django.db import models
 from django.urls import reverse
 from django.dispatch import receiver
 from django.utils import timezone
+from django.conf import settings
 from django.db.models.signals import post_save
 from django.template.defaultfilters import slugify
 
@@ -59,10 +60,13 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     mark = models.CharField(max_length=100)
     description = models.TextField(max_length=500)
-    likes = models.IntegerField(default=0)
+    likes = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True, related_name='product_likes')
     image = models.URLField(max_length=2000, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
+     
+    def get_api_like_url(self):
+        return reverse("api:like-api-toggle", kwargs={"pk":self.pk})

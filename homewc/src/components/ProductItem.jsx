@@ -1,10 +1,13 @@
-import React, {useState} from "react";
+import React, { useState,useEffect } from "react";
 import "../assets/styles/Main.scss";
-import buttonURL from "../utils.js";
+import {backendURL, buttonURL} from "../utils.js";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import axios from "axios";
 import { Button, Modal} from "react-bootstrap";
 
 const ProductItem= (props) => {
     const contactURL = buttonURL;
+    const [likes, setLikes] = useState(props.likes);
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
@@ -27,6 +30,33 @@ const ProductItem= (props) => {
     function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
+
+    const [isAuth, setIsAuth] = useState(false);
+
+    useEffect(() => {
+        if (localStorage.getItem('token') !== null) {
+            setIsAuth(true);
+        }
+    }, []);
+
+    const makeLike = () => {
+        axios.get(backendURL+'api/products/' + props.id + '/like/')
+            .then(res => {
+                console.log(res.data);
+                if (res.data.liked) {
+                    setLikes(likes + 1);
+                }else {
+                    if (likes > 0) {
+                        setLikes(likes - 1);
+                    }
+                }
+            })
+            .catch(err => {
+                console.log(err);
+            });      
+    }
+
+    
     return (
         <React.Fragment>
             <div className={class_}>
@@ -40,6 +70,10 @@ const ProductItem= (props) => {
                 <Button variant="primary" className="c-book" onClick={handleShow}>
                     <div className="c-image">
                         <img src={props.image} alt="" />
+                        <button className="heart">
+                            <FontAwesomeIcon icon="fa-solid fa-heart" />
+                            <span style={{marginLeft:'12px'}}>{likes}</span>
+                        </button>
                     </div>
                 </Button>
             
@@ -51,7 +85,17 @@ const ProductItem= (props) => {
                        
                         <div className="content-modal-elements">
                             <img className="modal-image" src={props.image} alt="" />
-                            <div style={{margin: "10px 20px",}}>
+                            <div style={{margin: "10px 20px", display:'flex', justifyContent: 'center', flexDirection:'column'}}>
+                                {isAuth ? <button className="heart " onClick={makeLike}>
+                                            <FontAwesomeIcon className="heart-scale" icon="fa-solid fa-heart" />
+                                            <span style={{marginLeft:'12px'}} >{likes}</span>
+                                        </button>
+                                    :<button className="heart">
+                                        <FontAwesomeIcon icon="fa-solid fa-heart" />
+                                        <span style={{marginLeft:'12px'}}>{likes}</span>    
+                                    </button>
+                                }
+                                
                                 {/* <p>
                                 Para reservar este producto, usted debe contactarse con nosotros
                                 especificando el producto y su marca en el mensaje

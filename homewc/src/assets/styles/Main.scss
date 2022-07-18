@@ -327,6 +327,65 @@
     grid-row-gap: 40px;
 }
 
+// hearts
+.heart {
+    font-size: 50px;
+    border-radius: 50%;
+    border: none;
+    background: none;
+    position: relative;
+    transition: all .4s;
+    color: rgb(255, 80, 80);
+}
+
+.heart-scale:hover {
+    transform: scale(1.2);
+}
+
+// forms
+
+.form-container {
+    margin-top: 140px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form input {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #dcdcdced;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all .4s;
+}
+
+form input:focus {
+    outline: none;
+    border: 1px solid #537e9ded;
+}
+
+form input[type="submit"] {
+    margin-top: 30px;
+    background-color: #537e9ded;
+    padding: 0 20px;
+    color: #fff;
+}
+
+input[type="button"] {
+    margin-top: 30px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #537e9ded;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
 
  @media screen and (max-width: 450px) {
     .c-item {
